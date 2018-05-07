@@ -248,22 +248,7 @@ $(function(){//главная функция уборки
         }else{
             $(".num").val(tick_inside);
         }
-      },  200);   // 0.5 секунд на перемещение
-
-        // if (pause==false){
-        //   setTimeout(function() {
-        //     clearInterval(MyTimer);
-        //   }, 20000);}// через 50 сек остановить уборку
-        // }else{ if (tick>100){
-        //   setTimeout(function() {
-        //     clearInterval(MyTimer);
-        //   }, 0);// остановить уборку
-        // }
-        // }
-
-
-
-
+      },  200);   // 0.2 секунды на перемещение
     });
 });
 function stopCount() {
