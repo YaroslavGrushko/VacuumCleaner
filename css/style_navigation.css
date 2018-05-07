@@ -1,0 +1,116 @@
+.ch-item {
+	width:19vw;
+	height:19vw;
+
+	border-radius: 50%;
+	position: relative;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+	cursor: default;
+}
+
+.ch-info-wrap{
+	position: absolute;
+	width: 19vw; /*180px;*/
+	height: 19vw; /*180px;*/
+	border-radius: 50%;
+
+	-webkit-perspective: 800px;
+	-moz-perspective: 800px;
+	-o-perspective: 800px;
+	-ms-perspective: 800px;
+	perspective: 800px;
+
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	-ms-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+
+	background: white;/*#f9f9f9 url(../images/bg.jpg);*/
+	box-shadow:
+		0 0 0 20px rgba(255,255,255,0.2),
+		inset 0 0 3px rgba(115,114, 23, 0.8);
+
+}
+
+.ch-info{
+	position: absolute;
+	width: 19vw; /*180px;*/
+	height: 19vw; /*180px;*/
+	border-radius: 50%;
+
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	-ms-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+
+}
+
+.ch-info > div {
+	display: block;
+	position: absolute;
+	width: 19vw;
+	height: 19vw;
+	border-radius: 50%;
+	background-position: center center;
+
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.ch-info .ch-info-back{
+	-webkit-transform: rotate3d(0,1,0,180deg);
+	-moz-transform: rotate3d(0,1,0,180deg);
+	-o-transform: rotate3d(0,1,0,180deg);
+	-ms-transform: rotate3d(0,1,0,180deg);
+	transform: rotate3d(0,1,0,180deg);
+
+}
+
+.Elen{
+	background-image: url(../images/E.jpg);
+	background-repeat: no-repeat;
+	background-size:cover;
+}
+
+.Moria{
+	background-image: url(../images/M.jpg);
+	background-repeat: no-repeat;
+	background-size:cover;
+}
+
+
+.ch-img-1 {
+	background-image: url(../images/background/globeB.jpg);
+	background-repeat: no-repeat;
+	background-size:cover;
+}
+.ch-img-2 {
+	background-image: url(../images/background/globeA.jpg);
+	background-repeat: no-repeat;
+	background-size:cover;
+}
+
+.portrets:hover .ch-info-wrap {
+	box-shadow:
+		0 0 0 0 rgba(255,255,255,0.8),
+		inset 0 0 3px rgba(115,114, 23, 0.8);
+}
+
+.portrets:hover .ch-info {
+	-webkit-transform: rotate3d(0,1,0,-180deg);
+	-moz-transform: rotate3d(0,1,0,-180deg);
+	-o-transform: rotate3d(0,1,0,-180deg);
+	-ms-transform: rotate3d(0,1,0,-180deg);
+	transform: rotate3d(0,1,0,-180deg);
+}

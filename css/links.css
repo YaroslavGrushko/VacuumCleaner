@@ -1,0 +1,116 @@
+/* effect 10 */
+
+.hover10{
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.hover10:before, .hover10:after, .hover10__label:before, .hover10__label:after{
+  content: "";
+  position: absolute;
+  transition-property: transform;
+  transition-duration: .1s;
+  transition-timing-function: ease-out;
+}
+
+.hover10:before, .hover10:after{
+  width: 100%;
+  height: 2px;
+  left: 0;
+}
+
+.hover10:before{
+  top: 0;
+  transform: translate3d(-105%, 0, 0);
+  transition-delay: .25s;
+}
+
+.hover10:after{
+  bottom: 0;
+  transform: translate3d(105%, 0, 0);
+  transition-delay: .05s;
+}
+
+.hover10__label:before, .hover10__label:after{
+  width: 2px;
+  height: 100%;
+  top: 0;
+}
+
+.hover10__label:before{
+  left: 0;
+  transform: translate3d(0, 105%, 0);
+}
+
+.hover10__label:after{
+  right: 0;
+  transform: translate3d(0, -105%, 0);
+  transition-delay: .15s;
+}
+
+.hover10:hover:before, .hover10:hover:after,
+.hover10:hover .hover10__label:before, .hover10:hover .hover10__label:after,
+.hover10:focus:before, .hover10:focus:after,
+.hover10:focus .hover10__label:before, .hover10:focus .hover10__label:after{
+  transform: translate3d(0, 0, 0);
+  transition-duration: .2s;
+}
+
+.hover10:hover:before, .hover10:focus:before{
+  transition-delay: 0s;
+}
+
+.hover10:hover:after, .hover10:focus:after{
+  transition-delay: .4s;
+}
+
+.hover10:hover .hover10__label:after, .hover10:focus .hover10__label:after{
+  transition-delay: .2s;
+}
+
+.hover10:hover .hover10__label:before, .hover10:focus .hover10__label:before{
+  transition-delay: .6s;
+}
+
+.hover10:focus{
+  outline: none;
+}
+
+.hover10:hover, .hover10:focus{
+  color: #FFA500;
+}
+
+.hover10:before,
+.hover10:after, .hover10__label:before,
+.hover10__label:after{
+  background-color: #1e90ff;
+}
+
+.hover10{
+  padding: .5rem 1.5rem;
+}
+
+.menu{
+  /*list-style: none;*/
+  padding: 0;
+  margin: 0;
+}
+
+.menu__item{
+  display: inline-block;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.menu__link{
+  font-size: 1.2rem;
+  font-weight: 700;
+  color:  #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 800px) {
+  .menu__link{
+    font-size: 0.8rem;
+}

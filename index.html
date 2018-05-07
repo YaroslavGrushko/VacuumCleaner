@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = "utf-8">
+<meta name = "author" content = "Yaroslav Grushko">
+<meta name = "description" content = "Blog">
+<meta name="viewport" content="height=device-height">
+<meta name="viewport" content="width=device-width">
+
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<link rel="stylesheet" type="text/css" href="css/links.css"/>
+<link rel="stylesheet" type="text/css" href="css/Modal.css"/>
+
+<link rel="stylesheet" type="text/css" href="css/button.css"/>
+<link rel="stylesheet" type="text/css" href="css/button_stop.css"/>
+<link  href="http://fonts.googleapis.com/css?family=Cabin:400,500,600,bold" rel="stylesheet" type="text/css" >
+<link  href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:regular,bold" rel="stylesheet" type="text/css">
+
+<link rel="shortcut icon" href="favicon.ico"/>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous">
+</script>
+
+<title>Vacuum Cleaner</title>
+</head>
+<body>
+<!--определяем браузер-->
+<!-- <script src="http://manas.inf.ua/js/detect.js"></script> -->
+
+
+<!--подключаем react-->
+<!--
+<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+-->
+
+<!--Grid-container-->
+<div class="grid-container">
+  <div class="main_content">
+      <!--Всплывающее окно условия-->
+    <div id="Task_modal" class="modal">
+        <form class="modal-content animate">
+            <div class="imgcontainer" style="background-color:rgba(255, 255, 255, 0.2);">
+                <span class="close" title="Close Modal">&times;</span>
+                <div class="container_for_task">
+                		<div><b>Условие задачи:</b></div>
+                    <div>
+                      В комнате 5х5 квадратов выпоняется уборка пылесосом-автоматом, который очищает
+                      один квадрат за один ход на одну клетку по вертикали или горизонтали. При этом,
+                      с вероятностью 1/2 в одном из квадратов комнаты
+                      опять появляется мусор. Требуется наиболее эффективно очистить комнату за 100 ходов
+                      пылесоса.
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+<!--Всплывающее окно условия-->
+<!--Всплывающее окно постановки-->
+<div id="Formulation_modal" class="modal">
+  <form class="modal-content animate">
+      <div class="imgcontainer" style="background-color:rgba(255, 255, 255, 0.2);">
+          <span class="close" title="Close Modal">&times;</span>
+          <div class="container_for_task">
+            <div><b>Постановка задачи:</b></div>
+            <div>
+              1. Распределение вероятности появления мусора по всей площади комнаты равномерное.
+              2. Комната должна быть убрана равномерно по всей площади.
+              3. Автомат выбирает перемещение в тот соседний квадрат, где он дольше всего отсутствовал.
+              4. В начальный момент времени пылесос находится в левом верхнем углу комнаты.
+            </div>
+        </div>
+      </div>
+
+  </form>
+</div>
+<!--Всплывающее окно постановки-->
+<!--Всплывающее окно решения-->
+<div id="Solution_modal" class="modal">
+  <form class="modal-content animate">
+      <div class="imgcontainer" style="background-color:rgba(255, 255, 255, 0.2);">
+          <span class="close" title="Close Modal">&times;</span>
+          <div class="container_for_task">
+              <div id="Matrix">Решение задачи</div>
+                <script src="js/Solution.js"></script>
+              </div>
+      </div>
+      <textarea class="num" cols="3" rows="1">0</textarea>
+  </form>
+    <a class="button">
+        <span>start</span>
+    </a>
+    <a class="button_stop">
+        <span>stop</span>
+    </a>
+
+</div>
+
+<!--Всплывающее окно решения-->
+      <div id="logo">
+         <div id="sun"> </div>
+      </div>
+  </div>
+
+  <div class="nav_bar">
+    <p class="navigation">
+
+      <a href="#" class="menu__link hover10" style="text-decoration: none;"><span class="menu__label hover10__label" id="Task">Условие</span></a>
+      <a href="#" class="menu__link hover10" style="text-decoration: none;"><span class="menu__label hover10__label" id="Formulation">Постановка</span></a>
+      <a href="#" class="menu__link hover10" style="text-decoration: none;"><span class="menu__label hover10__label" id="Solution">Решение</span></a>
+
+    </p>
+  </div>
+  <div class="footer_content myfooter">
+      <small>© Yaroslav Grushko K-45</small>
+  </div>
+</div>
+<!--Grid-container-->
+
+<script>
+
+$(function(){
+    $('#Task').click(function(){
+      $('#Formulation_modal, #Solution_modal').hide();
+      $('#Task_modal').show();
+    });
+});
+
+$(function(){
+    $('#Formulation').click(function(){
+      $('#Task_modal, #Solution_modal').hide();
+      $('#Formulation_modal').show();
+    });
+});
+
+$(function(){
+    $('#Solution').click(function(){
+      $('#Task_modal, #Formulation_modal').hide();
+      $('#Solution_modal').show();
+
+    });
+});
+
+$(function(){
+    $('.close').click(function(){
+      $('#Task_modal, #Formulation_modal, #Solution_modal').hide();
+      $('#logo').show();
+    });
+});
+
+
+</script>
+
+</body>
+</html>

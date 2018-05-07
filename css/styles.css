@@ -1,0 +1,162 @@
+/*для возможности подключения только grid-компонент бутсрапа*/
+html {
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+    }
+
+    *,
+    *::before,
+    *::after {
+      -webkit-box-sizing: inherit;
+              box-sizing: inherit;
+    }
+/*для возможности подключения только grid-компонент бутсрапа*/
+
+html {
+	/*top-shadow:*/
+	box-shadow: 0 400px 300px -300px LightSkyBlue    inset;
+	margin:0;
+  padding:0;
+}
+html, body {
+          font-family: verdana, arial, sans-serif;
+}
+
+body{
+
+  background : rgba(255, 255, 190, .75) url("../images/background/Room.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size:100% auto;
+
+	border-top: 1px solid transparent ;
+  border-bottom: 1px solid transparent ;
+	border-left:0;
+	border-right:0;
+	margin:0;
+  padding: 1em 1em 0 1em; /*верх прав. нижн. левый*/
+}
+
+table{
+  width: 100%;
+}
+ @font-face { font-family: 'HappyProg'; src: url('../font/TT0589M_.TTF'); }
+
+#sun{
+	background: url("../images/Logo.png");
+	background-repeat: no-repeat;
+	background-size:cover;
+	width: 15vw;
+  height:15vw;
+  border: 1px solid transparent;
+	border-radius: 50%;
+	margin-top: 0vh;
+  margin-left: 85%;
+}
+
+.inscription{
+  font-family: 'HappyProg';
+	text-shadow: 5px 4px 3px #999;
+	color: #0000FF;
+	font-size: 5vw;
+  top:5%;
+	position: absolute;
+	left: 66%;
+	opacity: 1;
+}
+
+.navigation{
+	text-shadow: 5px 4px 3px #999;
+	color: #0000FF;
+	opacity: 1;
+
+}
+
+.myfooter{
+  font-size: 0.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+	color:white;
+}
+.left{
+	display: flex;
+	align-items: flex-end;
+	color:red;
+}
+
+
+/*------------------ grid-модуль:-------------------*/
+@media screen and (max-width: 460px) {
+.grid-container {
+                height:97vh;
+                display: grid;
+                grid-template-areas: "main_content"
+                                     "."
+                                     "nav_bar"
+                                     "."
+                                     "footer_content";
+                grid-template-columns: 1fr;
+                grid-template-rows: 80vh 1vh 12vh 1vh 3vh;
+            }
+
+						}
+
+
+            .main_content { grid-area: main_content; background-color: transparent; }
+            .nav_bar { grid-area: nav_bar; background-color: transparent; }
+            .footer_content { grid-area: footer_content; background-color:transparent; }
+            p{
+                text-align:center;
+            }
+
+
+@media screen and (min-width: 580px) {
+
+                .grid-container {
+                    height:90vh;
+                    display: grid;
+                    grid-template-areas: "main_content main_content main_content"
+                                         ". . ."
+                                         "nav_bar . footer_content";
+                    grid-template-columns: 76vw 1vw 20vw;
+                    grid-template-rows: 76vh 1vh 10vh;
+                }
+
+                 #sun{
+                	   width: 7vw;
+                	   height:7vw;
+                	}
+									.myfooter{
+										font-size: 0.8em;
+									  display: flex;
+									  align-items: flex-end;
+										color:white;
+									}
+}
+
+@media (min-width: 461px) and (max-width: 579px) {
+
+  .grid-container {
+                  height:180vh;
+                  display: grid;
+                  grid-template-areas: "main_content"
+                                       "."
+                                       "nav_bar"
+                                       "."
+                                       "footer_content";
+                  grid-template-columns: 1fr;
+                  grid-template-rows: 155vh 1vh 20vh 1vh 3vh;
+              }
+
+   #sun{
+       width: 7vw;
+       height:7vw;
+    }
+    .myfooter{
+      font-size: 0.8em;
+      display: flex;
+      align-items: flex-end;
+      color:white;
+    }
+  }
