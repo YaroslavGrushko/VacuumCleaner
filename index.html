@@ -12,10 +12,11 @@
 <link rel="stylesheet" type="text/css" href="css/Modal.css"/>
 
 <link rel="stylesheet" type="text/css" href="css/button.css"/>
-<link rel="stylesheet" type="text/css" href="css/button_stop.css"/>
 <link  href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,bold" rel="stylesheet" type="text/css" >
 <link  href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:regular,bold" rel="stylesheet" type="text/css">
-
+<!-- fontawsome icons -->
+<link href="css/fontawesome-free-5.9.0-web/css/all.css" rel="stylesheet"> <!--load all styles -->
+<!-- for font -->
 <link rel="icon" href="favicon.ico"/>
 
 <script
@@ -27,34 +28,50 @@
 <title>Vacuum Cleaner</title>
 </head>
 <body>
-<!--определяем браузер-->
-<!-- <script src="http://manas.inf.ua/js/detect.js"></script> -->
-
-
-<!--подключаем react-->
-<!--
-<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
--->
 
 <!--Grid-container-->
 <div class="grid-container">
   <div class="main_content">
+
+    <span class="main_title">vacuum cleaner AI (Artificial intelligence) problem :)</span>
       <!--Всплывающее окно условия-->
     <div id="Task_modal" class="modal">
         <form class="modal-content animate">
-            <div class="imgcontainer" style="background-color:rgba(255, 255, 255, 0.2);">
+            <div class="imgcontainer">
                 <span class="close" title="Close Modal">&times;</span>
                 <div class="container_for_task">
-                		<div><b>Условие задачи:</b></div>
+                    <div><b>умова задачі:</b></div>
+                    <br>
                     <div>
-                      В комнате 5х5 квадратов выпоняется уборка пылесосом-автоматом, который очищает
-                      один квадрат за один ход на одну клетку по вертикали или горизонтали. При этом,
-                      с вероятностью 1/2 в одном из квадратов комнаты
-                      опять появляется мусор. Требуется наиболее эффективно очистить комнату за 100 ходов
-                      пылесоса.
+                      <i class="far fa-circle"></i>
+                      є кімната (просто сітка, що складається з 5х5 квадратиків). за умовою задачі, в цій кімнаті весь час з'являється сміття.
+                      і є пилосос, що весь час очищає цю кімнату.
+                      весь час розбито на 100 ходів.
                     </div>
+                    <br>
+                    <div>
+                      <i class="far fa-circle"></i>
+                      <em>принцип по якому з'являється сміття:</em>
+                      кожен хід сміття з'являється в будь-якій, але тільки одній клітинці. 
+                      при цьому існують ходи в яких сміття не з'являєтья:)
+                    </div>
+                    <br>
+                    <div>
+                      <i class="far fa-circle"></i>
+                      <em>принцип по якому рухається пилосос:</em>
+                      пилосос може рухатися тільки по вертикалі або горизонталі. 
+                      він рухається тільки на одну клітинку.
+                    </div>
+                    <br>
+                    <div>
+                        <i class="far fa-circle"></i>
+                        <em>завдання:</em>
+                        яким чином краще рухатись пилососу? якщо він буде рухатись кожен хід 
+                        у будь-якому (довільному) напрямку, то це буде нераціонально. 
+                        хоча так теж кімната буде очищатись від сміття. 
+                        спробуйте придумати алгоритм по якому слід рухатись пилососу, 
+                        щоб очищати найбільший процент сміття.
+                      </div>
                 </div>
             </div>
         </form>
@@ -63,15 +80,18 @@
 <!--Всплывающее окно постановки-->
 <div id="Formulation_modal" class="modal">
   <form class="modal-content animate">
-      <div class="imgcontainer" style="background-color:rgba(255, 255, 255, 0.2);">
+      <div class="imgcontainer">
           <span class="close" title="Close Modal">&times;</span>
           <div class="container_for_task">
-            <div><b>Постановка задачи:</b></div>
+            <div><b>можливе рішення даної задачі про пилосос:</b></div>
+            <br>
             <div>
-              1. Распределение вероятности появления мусора по всей площади комнаты равномерное.
-              2. Комната должна быть убрана равномерно по всей площади.
-              3. Автомат выбирает перемещение в тот соседний квадрат, где он дольше всего отсутствовал.
-              4. В начальный момент времени пылесос находится в левом верхнем углу комнаты.
+             <i class="far fa-circle"></i> спочатку пилосос знаходиться в лівому верхньому кутку кімнати (сітки квадратиків).
+            </div> <br/> <div>
+                <i class="far fa-circle"></i><span class="answer"> пилосос переміщується в той сусідній квадрат, де він найдовше був відсутній.</span>
+                тобто туди, де скоріш за все вже з'явилося сміття.
+                <br/><br/>
+                це рішення дійсно можна реалізувати програмно (натисни на кнопку реалізація і подивись).
             </div>
         </div>
       </div>
@@ -82,36 +102,39 @@
 <!--Всплывающее окно решения-->
 <div id="Solution_modal" class="modal">
   <form class="modal-content animate">
-      <div class="imgcontainer" style="background-color:rgba(255, 255, 255, 0.2);">
+      <div class="imgcontainer" id="solutionContainer">
           <span class="close" title="Close Modal">&times;</span>
           <div class="container_for_task">
-              <div id="Matrix">Решение задачи</div>
+              <div id="Matrix">реалізація рішення задачі</div>
                 <script src="js/Solution.js"></script>
               </div>
-      </div>
+          </div>
       <textarea class="num" cols="3" rows="1">0</textarea>
+        
   </form>
-    <a class="button">
-        <span>Старт</span>
+    <a class="button button_start" >
+        <span title="запустити на виконання">Start</span>
     </a>
-    <a class="button_stop">
-        <span>Стоп</span>
+    <a class="button button_stop" >
+        <span title="призупинити">Pause </span>
     </a>
-
-</div>
-
+    <a class="button button_reset">
+      <span title= "перезавантажити сторінку">Reset (F5) </span>
+  </a>
+    
+      </div>
+    </div>
 <!--Всплывающее окно решения-->
-      <div id="logo">
+      <div id="logo" title="КПІ ім. І.Сікорського">
          <div id="sun"> </div>
       </div>
-  </div>
 
   <div class="nav_bar">
     <p class="navigation">
 
-      <a href="#" class="menu__link hover10" style="text-decoration: none;"><span class="menu__label hover10__label" id="Task">Условие</span></a>
-      <a href="#" class="menu__link hover10" style="text-decoration: none;"><span class="menu__label hover10__label" id="Formulation">Постановка</span></a>
-      <a href="#" class="menu__link hover10" style="text-decoration: none;"><span class="menu__label hover10__label" id="Solution">Решение</span></a>
+      <a href="#" class="menu__link hover10" style="text-decoration: none;"><span class="menu__label hover10__label" id="Task">умова</span></a>
+      <a href="#" class="menu__link hover10" style="text-decoration: none;"><span class="menu__label hover10__label" id="Formulation">можливе рішення</span></a>
+      <a href="#" class="menu__link hover10" style="text-decoration: none;"><span class="menu__label hover10__label" id="Solution">реалізація</span></a>
 
     </p>
   </div>

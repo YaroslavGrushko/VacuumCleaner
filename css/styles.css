@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Comfortaa';
+  src: url("../fonts/Comfortaa/Comfortaa-Regular.ttf"); }
+@font-face{
+  font-family:'Pacifico';
+  src: url("../fonts/Pacifico/Pacifico-Regular.ttf")
+}
+@font-face{
+  font-family:'FredokaOne';
+  src: url("../fonts/FredokaOne/FredokaOne-Regular.ttf");}
 /*для возможности подключения только grid-компонент бутсрапа*/
 html {
       -webkit-box-sizing: border-box;
@@ -17,14 +27,19 @@ html {
 	box-shadow: 0 400px 300px -300px LightSkyBlue    inset;
 	margin:0;
   padding:0;
+ 
+
 }
 html, body {
           font-family: verdana, arial, sans-serif;
+          /* font-family: 'Comfortaa', cursive; */
 }
 
 body{
+  /* width:100%; */
+  /* background : rgba(255, 255, 190, .75) url("../images/background/Room.jpg"); */
+  background : rgba(173, 152, 109, .75) url("../images/background/Room.jpg");
 
-  background : rgba(255, 255, 190, .75) url("../images/background/Room.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size:100% auto;
@@ -36,13 +51,21 @@ body{
 	margin:0;
   padding: 1em 1em 0 1em; /*верх прав. нижн. левый*/
 }
-
+.main_title{
+  display:block;
+  /* font-family: 'Pacifico', 'regular'; */
+  font-family: 'FredokaOne', 'regular';
+  margin-top: 20vw;
+  font-size:1.5rem;
+  text-align: center;
+}
 table{
   width: 100%;
 }
  @font-face { font-family: 'HappyProg'; src: url('../font/TT0589M_.TTF'); }
 
 #sun{
+  position:absolute;
 	background: url("../images/Logo.png");
 	background-repeat: no-repeat;
 	background-size:cover;
@@ -50,8 +73,9 @@ table{
   height:15vw;
   border: 1px solid transparent;
 	border-radius: 50%;
-	margin-top: 0vh;
-  margin-left: 85%;
+  /* margin-top: 0vh; */
+  top:10px;
+  /* margin-left: 85%; */
 }
 
 .inscription{
@@ -97,7 +121,9 @@ table{
                                      "."
                                      "footer_content";
                 grid-template-columns: 1fr;
-                grid-template-rows: 80vh 1vh 12vh 1vh 3vh;
+                /* grid-template-rows: 80vh 1vh 12vh 1vh 3vh; */
+                grid-template-rows: 50vh 1vh 30vh 1vh 10vh;
+
             }
 
 						}
@@ -122,10 +148,17 @@ table{
                     grid-template-columns: 76vw 1vw 20vw;
                     grid-template-rows: 76vh 1vh 10vh;
                 }
-
+                .main_title{
+                  /* display:block; */
+                  /* font-family: 'Pacifico', cursive; */
+                  /* font-family: 'FredokaOne', 'regular'; */
+                  margin-top: 10vw;
+                  font-size:2rem;
+                  text-align: center;
+                }
                  #sun{
                 	   width: 7vw;
-                	   height:7vw;
+                     height:7vw;
                 	}
 									.myfooter{
 										font-size: 0.8em;
@@ -148,10 +181,11 @@ table{
                   grid-template-columns: 1fr;
                   grid-template-rows: 155vh 1vh 20vh 1vh 3vh;
               }
-
    #sun{
        width: 7vw;
        height:7vw;
+       /* margin-left: 75%; */
+
     }
     .myfooter{
       font-size: 0.8em;

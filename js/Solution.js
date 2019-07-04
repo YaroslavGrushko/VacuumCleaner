@@ -225,7 +225,7 @@ if( !((col==5)&&(row==5)) ){
 }
 
 $(function(){//главная функция уборки
-    $('.button').click(function(){
+    $('.button_start').click(function(){
         tick_inside = 0;
 
         MyTimer = setInterval(function() {
@@ -259,5 +259,10 @@ $(function(){//функция остановки уборки
       pause = true;
       tick=tick_inside+tick;
     clearInterval(MyTimer);
+  })
+  })
+  $(function(){//reset button
+    $('.button_reset').click(function(){
+   location.reload();
   })
   })
