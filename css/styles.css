@@ -194,3 +194,14 @@ table{
       color:white;
     }
   }
+
+@media (orientation:landscape){
+  body{
+    background-size:100% auto;
+  }
+}
+@media (orientation:portrait){
+  body{
+    background-size:auto 100% ;
+  }
+}
